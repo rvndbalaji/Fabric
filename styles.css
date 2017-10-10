@@ -102,3 +102,23 @@ body {
     color: black;
     background-color: white;
 }
+
+.welcome {}
+
+.titletext_fabric {
+    font-family: Calluna, sans-serif;
+    font-size: 4rem;
+    color: #ffffff;
+}
+
+.sub_titletext_fabric {
+    font-size: 2rem;
+    color: #212121;
+}
+
+
+
+.menu {
+    text-align: center;
+    background-color: #3F51B5;
+}

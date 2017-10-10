@@ -40,8 +40,10 @@
 
 <body>
     <nav class="navbar navbar-fixed-top menu">
-        <div class="container">
-            Fabric
+        <div class="container" align="center">
+            <span class="titletext_fabric">Fabric</span>
         </div>
     </nav>
 </body>
+
+</html>
