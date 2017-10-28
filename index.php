@@ -45,11 +45,8 @@
     <nav class="navbar menu">
         <span class="titletext_fabric">Fabric</span>
     </nav>
-    <div>
-
-        <?php
-    require_once('login_form.php');
-?>
+    <div class="centerpos">
+        <?php require_once('login_form.php'); ?>
     </div>
 
 
