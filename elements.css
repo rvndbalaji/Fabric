@@ -12,6 +12,7 @@
  input {
      font-size: 1.1rem;
      padding: 0.5rem;
+     height: 2.35rem;
  }
 
  .custom_label,
@@ -22,12 +23,19 @@
      box-shadow: 2px 2px 5px grey
  }
 
+
+ .custom_button:hover {
+     cursor: pointer;
+ }
+
+
+
  .custom_button {
      background-color: #5C6BC0;
  }
 
  .input_box {
      border-color: transparent;
-     border-bottom-color: #212121;
+     border-bottom-color: #5C6BC0;
      background-color: transparent;
  }

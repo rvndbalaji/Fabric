@@ -141,6 +141,10 @@ body {
     box-shadow: 2px 2px 5px grey
 }
 
+.custom_button:hover {
+    cursor: pointer;
+}
+
 .custom_button {
     background-color: #90CAF9;
 }

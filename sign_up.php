@@ -1,15 +1,9 @@
-<?php
-//header("sign_up.php");
-//die();
-?>
-
-
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous" type="text/css">
 
 
 
 <script type="application/javascript">
-    function performLogin() {
+    function performSignUp {
         var un_text = $('#username_text').val();
         var pw_text = $('#password_text').val();
         if (un_text != "" || pw_text != "") {
@@ -55,12 +49,13 @@
             </div><br>
             <div class="row">
                 <div class="col-12">
-                    <span class="custom_button" id="login_button" onmouseup="performLogin();">Sign Up</span>
+                    <span class="custom_button" id="login_button" onmouseup="performSignUp();">Sign Up</span>
                 </div>
             </div><br><br>
             <div class="row">
                 <div class="col-6" align="left">
-                    <span class="custom_button">Login</span>
+                    <a href="index.php" target="_self">
+                    <span class="custom_button">Login</span></a>
                 </div>
             </div>
 
