@@ -24,9 +24,24 @@
 
 <form action="#" method="post" id="login_form_element">
     <div id="form_box" align="center">
-        <h5>Login</h5>
+        <h5>Register</h5>
         <hr>
         <div class="input_label container">
+
+            <div class="row">
+                <div class="col-12">
+                    <span class="custom_label">First Name</span><input class="input_box" type="text" id="firstname_text" />
+                </div>
+            </div><br>
+
+            <div class="row">
+                <div class="col-12">
+                    <span class="custom_label">Last Name</span><input class="input_box" type="text" id="lastname_text" />
+                </div>
+            </div><br>
+
+
+
             <div class="row">
                 <div class="col-12">
                     <span class="custom_label">Username</span><input class="input_box" type="text" id="username_text" />
@@ -40,15 +55,12 @@
             </div><br>
             <div class="row">
                 <div class="col-12">
-                    <span class="custom_button" id="login_button" onmouseup="performLogin();">Login</span>
+                    <span class="custom_button" id="login_button" onmouseup="performLogin();">Sign Up</span>
                 </div>
             </div><br><br>
             <div class="row">
                 <div class="col-6" align="left">
-                    <span class="custom_button">Sign Up</span>
-                </div>
-                <div class="col-6" align="right">
-                    <a href="iforgot">I forgot my password</a>
+                    <span class="custom_button">Login</span>
                 </div>
             </div>
 

@@ -28,7 +28,6 @@
 }
 
 
-
 li {
     display: -webkit-inline-box;
     display: -ms-inline-flexbox;
@@ -131,4 +130,23 @@ body {
     width: 30rem;
     margin: 0 auto;
     margin-top: 3rem;
+}
+
+
+.custom_label,
+.custom_button {
+    color: white;
+    padding: 0.5rem;
+    background-color: #212121;
+    box-shadow: 2px 2px 5px grey
+}
+
+.custom_button {
+    background-color: #90CAF9;
+}
+
+.input_box {
+    border-color: transparent;
+    border-bottom-color: #212121;
+    background-color: transparent;
 }
