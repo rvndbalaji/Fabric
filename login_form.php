@@ -24,7 +24,7 @@ if(isset($_POST['username_text']) &&
             $_SESSION['user_ln'] = getUserInfo('fab_lastname');
 
             echo "Logging in...<br><br>";
-           header("refresh:2;url=http://localhost/Fabric");
+           header("refresh:0;url=http://localhost/Fabric");
         }
         else
         {

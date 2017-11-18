@@ -54,19 +54,25 @@ a:visited {
     text-decoration: none;
 }
 
+.blue_hyperlink,
 .hyperlink {
     margin-top: 1rem;
     padding: 1rem;
-    font-size: 2rem;
     z-index: 4;
     position: relative;
     cursor: pointer;
     cursor: hand;
-    text-shadow: 0 0 0.1rem white;
+    text-shadow: 0 0 0rem white;
     border-bottom: 2px solid transparent;
     -webkit-transition: border 400ms;
     transition: border 400ms;
     color: #ffffff;
+}
+
+.blue_hyperlink,
+.blue_hyperlink:hover {
+    text-shadow: 0 0 0rem rgb(2, 176, 244);
+    text-decoration: none;
 }
 
 .hyperlink:hover {
@@ -104,9 +110,10 @@ body {
 
 
 .titletext_fabric {
-    font-family: Calluna, sans-serif;
+    font-family: 'Poiret One', cursive;
     font-size: 2.5rem;
-    color: #ffffff;
+    font-weight: bold;
+    color: rgb(2, 176, 244);
     width: 100%;
 }
 
@@ -118,7 +125,7 @@ body {
 
 .menu {
     text-align: center;
-    position: fixed;
+    position: absolute;
     background-color: #212121;
     height: 4rem;
     margin-bottom: 0.5rem;
@@ -157,4 +164,51 @@ body {
 
 #log_reg {
     display: block;
+}
+
+
+
+.menu_item {
+    padding: 0.8rem;
+    color: white;
+    font-weight: bold;
+    font-size: 1.1rem;
+    position: relative;
+    margin: auto;
+    display: table-cell;
+}
+
+.menu_ul {
+    position: relative;
+    margin: auto;
+}
+
+
+input {
+    font-size: 1.1rem;
+    padding: 0.5rem;
+    height: 2.35rem;
+}
+
+input:focus {
+    outline-width: 0;
+}
+
+#search_box_form {
+    float: left;
+}
+
+.search_box_form {
+    position: absolute;
+    left: 12rem;
+    width: 25%;
+}
+
+#search_box {
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    border-bottom: 0.04rem lightgray solid;
+    color: white;
+    font-size: 110%;
 }

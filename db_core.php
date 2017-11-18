@@ -31,11 +31,7 @@ function Fetch($query)
 
 function isLoggedIn()
 {
-		 if(isset($_SESSION['user_id']) && !empty($_SESSION['user_id']))
-		{
-		 return true;
-   		}
-		else return false;
+  return (!(!isset($_SESSION['user_id']) || empty($_SESSION['user_id'])));
 }
 
 function getUserInfo($field)
@@ -50,6 +46,11 @@ function getIdFromUser($username)
 	$result = Fetch("SELECT fab_id FROM users WHERE fab_username='$username' ORDER BY fab_id");
     return mysqli_fetch_array($result)['fab_id'];
 }
-
+function LogOut()
+{
+    ob_flush();
+    session_destroy();
+    header("Location: http://localhost/Fabric/");
+}
 
 ?>
