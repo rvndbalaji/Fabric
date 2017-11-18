@@ -15,8 +15,16 @@ if(isset($_POST['username_text']) &&
          $result = performLogin($un,$pw);
         if($result=="success")
         {
-           echo "Logging in...";
-           header("refresh:2;url=index.php");
+           //User can now login.
+            //Create a new session with user id
+            $user_id = getIdFromUser($un);
+            $_SESSION['user_id']=  $user_id;
+            $_SESSION['user_un'] = getUserInfo('fab_username');
+            $_SESSION['user_fn'] = getUserInfo('fab_firstname');
+            $_SESSION['user_ln'] = getUserInfo('fab_lastname');
+
+            echo "Logging in...<br><br>";
+           header("refresh:2;url=http://localhost/Fabric");
         }
         else
         {
@@ -36,7 +44,7 @@ function performLogin($un,$pw)
        $row=mysqli_fetch_array($result);
         if($row['fab_password']==$pw)
         {
-            return "Logged In";
+            return "success";
         }
         else
         {
@@ -45,7 +53,6 @@ function performLogin($un,$pw)
    }
 ?>
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous" type="text/css">
 
 
 

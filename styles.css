@@ -154,3 +154,7 @@ body {
     border-bottom-color: #212121;
     background-color: transparent;
 }
+
+#log_reg {
+    display: block;
+}

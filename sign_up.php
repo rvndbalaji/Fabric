@@ -32,10 +32,14 @@ if(isset($_POST['firstname_text']) &&
             {
             echo "A user already exists with that username";
             }
-            else
+            else if($reg_res==true)
             {
                 echo "Sucessfully registered.     Redirecting you...<br><br>";
                 header("refresh:4;url=index.php");
+            }
+            else
+            {
+                echo "Something went wrong, please try again later";
             }
 
         }
@@ -56,7 +60,7 @@ if(isset($_POST['firstname_text']) &&
 }
 function registerUser($fn,$ln,$un,$pw,$et)
 {
-    $result = Fetch("insert into users values(NULL,'$un','$pw','$fn','$ln','$et','')");
+    $result = Fetch("insert into users values(NULL,'$un','$pw','$fn','$ln','$et',NULL)");
     return $result;
 }
 function un_validate($user)
@@ -94,8 +98,6 @@ function validateDetails($un,$pw,$et)
 
 
 
-
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous" type="text/css">
 
 
     <script type="application/javascript">

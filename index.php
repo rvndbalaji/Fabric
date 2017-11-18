@@ -1,6 +1,8 @@
 <?php
+ require_once('db_core.php');
 if(!isset($REG_TOKEN))
 {
+
     $REG_TOKEN = 'login_form.php';
 }
 ?>
@@ -24,7 +26,6 @@ if(!isset($REG_TOKEN))
         <title>Fabric</title>
         <!----------------BOOTSTRAP CSS----------------------->
 
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous" type="text/css">
 
 
         <link rel="stylesheet" href="styles.css" type="text/css">
@@ -38,6 +39,7 @@ if(!isset($REG_TOKEN))
         <script src="frameworks/TweenMax.min.js"></script>
         <script src="frameworks/ScrollToPlugin.min.js"></script>
 
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous" type="text/css">
         <!-----SLICK>
 
 <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css"/>
@@ -53,11 +55,22 @@ if(!isset($REG_TOKEN))
         <nav class="navbar menu">
             <span class="titletext_fabric">Fabric</span>
         </nav>
-        <div class="centerpos">
-            <?php
-            require_once($REG_TOKEN);
+
+        <?php
+                if(!isLoggedIn())
+                {
+                     echo "<div class='centerpos' id='log_reg''>";
+                    require_once($REG_TOKEN);
+                    echo "</div>";
+
+                }
+                else
+                {
+                    echo "<br><br><center>Welcome <b>".$_SESSION['user_fn'] ." ".$_SESSION['user_ln']."</b></center>";
+                }
+
         ?>
-        </div>
+
 
 
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->

@@ -21,9 +21,9 @@ function Fetch($query)
     else
     {
         Global $MYSQL_CODE_DUPLICATE_KEY;
-         if(mysqli_errno($con)==$MYSQL_CODE_DUPLICATE_KEY)
+         if(strcmp(mysqli_errno($con),$MYSQL_CODE_DUPLICATE_KEY)==0)
          {
-            return mysqli_errno($con);
+            return $MYSQL_CODE_DUPLICATE_KEY;
          }
         return mysqli_error($con);
     }
@@ -40,12 +40,16 @@ function isLoggedIn()
 
 function getUserInfo($field)
 {
-    Global $con;
-
 	$id = $_SESSION['user_id'];
-	$result = Fetch("SELECT $field FROM users WHERE id='$id' ORDER BY id");
-    return $result;
-
+	$result = Fetch("SELECT $field FROM users WHERE fab_id='$id' ORDER BY fab_id");
+   return mysqli_fetch_array($result)[$field];
 }
+
+function getIdFromUser($username)
+{
+	$result = Fetch("SELECT fab_id FROM users WHERE fab_username='$username' ORDER BY fab_id");
+    return mysqli_fetch_array($result)['fab_id'];
+}
+
 
 ?>
