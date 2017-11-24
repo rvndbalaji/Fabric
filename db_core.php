@@ -29,28 +29,40 @@ function Fetch($query)
     }
 }
 
+function getFileName()
+{
+    return basename($_SERVER['PHP_SELF'],'.php');
+}
 function isLoggedIn()
 {
   return (!(!isset($_SESSION['user_id']) || empty($_SESSION['user_id'])));
 }
 
-function getUserInfo($field)
+function getUserInfo($username,$field)
 {
-	$id = $_SESSION['user_id'];
-	$result = Fetch("SELECT $field FROM users WHERE fab_id='$id' ORDER BY fab_id");
+	$result = Fetch("SELECT $field FROM users WHERE fab_username='$username' ORDER BY fab_id");
    return mysqli_fetch_array($result)[$field];
 }
 
-function getIdFromUser($username)
+function Read($filename)
 {
-	$result = Fetch("SELECT fab_id FROM users WHERE fab_username='$username' ORDER BY fab_id");
-    return mysqli_fetch_array($result)['fab_id'];
+    $handle = fopen($filename, 'r');
+    $con = fread($handle,filesize($filename));
+    return $con;
 }
+
+function Write($filename,$content)
+{
+    $handler = fopen($filename,'w');
+    fwrite($handler,$content);
+    fclose($handler);
+}
+
 function LogOut()
 {
     ob_flush();
     session_destroy();
-    header("Location: http://localhost/Fabric/");
+    header("Location: http://localhost/Fabric");
 }
 
 ?>

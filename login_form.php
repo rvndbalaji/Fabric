@@ -17,12 +17,14 @@ if(isset($_POST['username_text']) &&
         {
            //User can now login.
             //Create a new session with user id
-            $user_id = getIdFromUser($un);
-            $_SESSION['user_id']=  $user_id;
-            $_SESSION['user_un'] = getUserInfo('fab_username');
-            $_SESSION['user_fn'] = getUserInfo('fab_firstname');
-            $_SESSION['user_ln'] = getUserInfo('fab_lastname');
+            $_SESSION['user_id']=  getUserInfo($un,'fab_id');
+            $_SESSION['user_un'] = $un;
+            $_SESSION['user_fn'] = getUserInfo($un,'fab_firstname');
+            $_SESSION['user_ln'] = getUserInfo($un,'fab_lastname');
 
+            $_SESSION['user_em'] = getUserInfo($un,'fab_email');
+
+            $_SESSION['user_ph'] = getUserInfo($un,'fab_phnumber');
             echo "Logging in...<br><br>";
            header("refresh:0;url=http://localhost/Fabric");
         }

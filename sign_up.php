@@ -34,8 +34,9 @@ if(isset($_POST['firstname_text']) &&
             }
             else if($reg_res==true)
             {
+                CreateProfile($un,$fn);
                 echo "Sucessfully registered.     Redirecting you...<br><br>";
-                header("refresh:4;url=index.php");
+                header("refresh:4;url=index");
             }
             else
             {
@@ -57,6 +58,14 @@ if(isset($_POST['firstname_text']) &&
 
 
 
+}
+
+
+CreateProfile("rvnd",'Rvnd');
+function CreateProfile($un,$fn)
+{
+    $content = "<?php require_once('profile.php')".'?'.'>';
+   Write($un.'.php',$content);
 }
 function registerUser($fn,$ln,$un,$pw,$et)
 {
@@ -94,11 +103,6 @@ function validateDetails($un,$pw,$et)
        }
 
 ?>
-
-
-
-
-
 
     <script type="application/javascript">
         function performSignUp() {
